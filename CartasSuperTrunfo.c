@@ -31,7 +31,7 @@ int main() {
     printf("Area da cidade: ");
     scanf("%f", &area1);
     printf("Número de pontos turísticos da cidade: ");
-    scanf("%i \n", &turismo1);
+    scanf("%i\n", &turismo1);
     printf("INSIRA OS DADOS DA SEGUNDA CARTA\n");
     printf("Codigo da carta: ");
     scanf("%s", cod2);
