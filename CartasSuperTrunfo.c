@@ -59,7 +59,7 @@ int main() {
 
        
 // Área para exibição dos dados das cartas
-    printf("CARTA 1\n");
+    printf("--- CARTA 1 ---\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod1);
     printf("Cidade: %s\n", cidade1);
@@ -70,7 +70,7 @@ int main() {
     printf("Densidade populacional: %f\n", densidade1);
     printf("PIB per Capita: %f\n", percapita1);
     
-    printf("CARTA 2\n");
+    printf("--- CARTA 2 ---\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod2);
     printf("Cidade: %s\n", cidade2);
