@@ -79,23 +79,33 @@ int main() {
     printf("Densidade populacional: %f\n", densidade2);
     printf("PIB per Capita: %f\n", percapita2);
 
+    //comparando as cartas utilizando as estruturas if/else
     if(turismo1 > turismo2){
-        printf("Atributo: Maior número de pontos turísticos:\n");
+        printf("---Atributo: Maior número de pontos turísticos---\n");
         printf("CARTA 1 - %s:", cidade1);
         printf(" %d Pontos turísticos \n", turismo1);
         printf("CARTA 2 - %s:", cidade2);
         printf(" %d Pontos turísticos \n", turismo2);
         printf("Resultado: Carta 1 - %s", cidade1);
         printf(" Venceu!\n");
-    }else{
-        printf("Atributo: Maior número de pontos turísticos:\n");
+    }else
+
+    if(turismo1 < turismo2){
+        printf("---Atributo: Maior número de pontos turísticos---\n");
         printf("CARTA 1 - %s:", cidade1);
         printf(" %d Pontos turísticos \n", turismo1);
         printf("CARTA 2 - %s:", cidade2);
         printf(" %d Pontos turísticos \n", turismo2);
         printf("Resultado: Carta 2 - %s", cidade2);
         printf(" Venceu!\n");
-    } 
+    }else{
+        printf("---Atributo: Maior número de pontos turísticos---\n");
+        printf("CARTA 1 - %s:", cidade1);
+        printf(" %d Pontos turísticos \n", turismo1);
+        printf("CARTA 2 - %s:", cidade2);
+        printf(" %d Pontos turísticos \n", turismo2);
+        printf("As duas carta tem o mesmo valor\n");
+    }
 
 return 0;
 } 
