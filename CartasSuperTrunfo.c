@@ -87,8 +87,15 @@ int main() {
         printf(" %d Pontos turísticos \n", turismo2);
         printf("Resultado: Carta 1 - %s", cidade1);
         printf(" Venceu!\n");
-    }
-  
+    }else{
+        printf("Atributo: Maior número de pontos turísticos:\n");
+        printf("CARTA 1 - %s:", cidade1);
+        printf(" %d Pontos turísticos \n", turismo1);
+        printf("CARTA 2 - %s:", cidade2);
+        printf(" %d Pontos turísticos \n", turismo2);
+        printf("Resultado: Carta 2 - %s", cidade2);
+        printf(" Venceu!\n");
+    } 
 
 return 0;
 } 
