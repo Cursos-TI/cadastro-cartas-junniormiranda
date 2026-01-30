@@ -34,7 +34,7 @@ int main() {
     printf("Area da cidade: ");
     scanf("%f", &area1);
     printf("Número de pontos turísticos da cidade: ");
-    scanf("%i", &turismo1);
+    scanf("%d", &turismo1);
 
     densidade1 = (float) populacao1 / area1;
     percapita1 = pib1 / populacao1;
@@ -51,22 +51,20 @@ int main() {
     printf("Area da cidade: ");
     scanf("%f", &area2);
     printf("Numero de pontos turísticos da cidade: ");
-    scanf("%i", &turismo2);
+    scanf("%d", &turismo2);
 
     densidade2 = (float) populacao2 / area2;
-    percapita2 = (float) pib2 / populacao2;
-
-
-       
+    percapita2 = (float) pib2 / populacao2;   
+    
 // Área para exibição dos dados das cartas
     printf("--- CARTA 1 ---\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod1);
     printf("Cidade: %s\n", cidade1);
-    printf("População: %i\n", populacao1);
+    printf("População: %d\n", populacao1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Área: %.2f Km²\n", area1);
-    printf("Número de pontos turísticos: %i\n", turismo1);
+    printf("Número de pontos turísticos: %d\n", turismo1);
     printf("Densidade populacional: %f\n", densidade1);
     printf("PIB per Capita: %f\n", percapita1);
     
@@ -74,13 +72,22 @@ int main() {
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod2);
     printf("Cidade: %s\n", cidade2);
-    printf("População: %i\n", populacao2);
+    printf("População: %d\n", populacao2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Área: %.2f Km²\n", area2);
-    printf("Número de pontos turísticos: %i\n", turismo2);
+    printf("Número de pontos turísticos: %d\n", turismo2);
     printf("Densidade populacional: %f\n", densidade2);
     printf("PIB per Capita: %f\n", percapita2);
 
+    if(turismo1 > turismo2){
+        printf("Atributo: Maior número de pontos turísticos:\n");
+        printf("CARTA 1 - %s:", cidade1);
+        printf(" %d Pontos turísticos \n", turismo1);
+        printf("CARTA 2 - %s:", cidade2);
+        printf(" %d Pontos turísticos \n", turismo2);
+        printf("Resultado: Carta 1 - %s", cidade1);
+        printf(" Venceu!\n");
+    }
   
 
 return 0;
