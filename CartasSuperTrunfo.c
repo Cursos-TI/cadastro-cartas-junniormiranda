@@ -10,14 +10,15 @@ int main() {
     char estado;
     char cod1[3], cod2[3];
     char cidade1[10], cidade2[10];
-    int populacao1, populacao2;
+    unsigned long int populacao1, populacao2;
     float area1, area2;
     float pib1, pib2;
     int turismo1, turismo2;
     float densidade1, densidade2;
     float percapita1, percapita2;
-
-
+    float den_invertida1, den_invertida2;
+    float poder1, poder2;
+   
 // Inserção dos dados das duas primeiras cartas de um estado
     printf ("Digite uma letra de A a H para representar o estado: ");
     scanf(" %c", &estado);
@@ -38,6 +39,8 @@ int main() {
 
     densidade1 = (float) populacao1 / area1;
     percapita1 = pib1 / populacao1;
+    den_invertida1 = 1 / densidade1;
+    poder1 = populacao1 + pib1 + area1 + turismo1 + percapita1 + den_invertida1;
 
     printf("INSIRA OS DADOS DA SEGUNDA CARTA\n");
     printf("Codigo da carta: ");
@@ -54,40 +57,60 @@ int main() {
     scanf("%d", &turismo2);
 
     densidade2 = (float) populacao2 / area2;
-    percapita2 = (float) pib2 / populacao2;   
+    percapita2 = pib2 / populacao2; 
+    den_invertida2 = 1 / densidade2;
+    poder2 = populacao2 + pib2 + area2 + turismo2 + percapita2 + den_invertida2; 
     
 // Área para exibição dos dados das cartas
     printf("--- CARTA 1 ---\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod1);
     printf("Cidade: %s\n", cidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %d habitantes\n", populacao1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Área: %.2f Km²\n", area1);
     printf("Número de pontos turísticos: %d\n", turismo1);
-    printf("Densidade populacional: %f\n", densidade1);
+    printf("Densidade populacional: %.3f habitantes por área\n", densidade1);
     printf("PIB per Capita: %f\n", percapita1);
     
     printf("--- CARTA 2 ---\n");
     printf("Estado: %c\n", estado);
     printf("Código: %s\n", cod2);
     printf("Cidade: %s\n", cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %d habitantes\n", populacao2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Área: %.2f Km²\n", area2);
     printf("Número de pontos turísticos: %d\n", turismo2);
-    printf("Densidade populacional: %f\n", densidade2);
+    printf("Densidade populacional: %.3f habitantes por área\n", densidade2);
     printf("PIB per Capita: %f\n", percapita2);
 
-    //comparando as cartas utilizando as estruturas if/else
-    if(turismo1 > turismo2){
-        printf("---Atributo: Maior número de pontos turísticos---\n");
-        printf("CARTA 1 - %s:", cidade1);
-        printf(" %d Pontos turísticos \n", turismo1);
-        printf("CARTA 2 - %s:", cidade2);
-        printf(" %d Pontos turísticos \n", turismo2);
-        printf("Resultado: Carta 1 - %s", cidade1);
-        printf(" Venceu!\n");
+//comparação das cartas
+    int pop_comp = populacao1 > populacao2;
+    int area_comp = area1 > area2;
+    int pib_comp = pib1 > pib2;
+    int tur_comp = turismo1 > turismo2;
+    int den_comp = densidade1 > densidade2;
+    int per_comp = percapita1 > percapita2;
+    int spoder = poder1 > poder2;
+
+    printf("**** Comparação das Cartas ****\n");
+    printf("População: Carta 1 venceu (%d)\n", pop_comp);
+    printf("Área: Carta 1 venceu (%d)\n", area_comp);
+    printf("PIB: Carta 1 venceu (%d)\n", pib_comp);
+    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", tur_comp);
+    printf("Densidade Populacional: Carta 2 venceu (%d)\n", den_comp);
+    printf("PIB per capita: Carta 1 venceu (%d)\n", per_comp);
+    printf("Super Poder: Carta 1 venceu (%d)\n", spoder);
+    
+//comparando as cartas utilizando as estruturas if/else
+    /*if(turismo1 > turismo2){
+        //printf("---Comparação das cartas---\n");
+        //printf("CARTA 1 - %s:", cidade1);
+        //printf(" %d Pontos turísticos \n", turismo1);
+        //printf("CARTA 2 - %s:", cidade2);
+        //printf(" %d Pontos turísticos \n", turismo2);
+        //printf("Resultado: Carta 1 - %s", cidade1);
+        //printf(" Venceu!\n");
     }else
 
     if(turismo1 < turismo2){
@@ -105,7 +128,7 @@ int main() {
         printf("CARTA 2 - %s:", cidade2);
         printf(" %d Pontos turísticos \n", turismo2);
         printf("As duas carta tem o mesmo valor\n");
-    }
+    }*/
 
 return 0;
 } 
