@@ -93,6 +93,7 @@ int main() {
     int per_comp = percapita1 > percapita2;
     int spoder = poder1 > poder2;
 
+//imprimindo resultados
     printf("**** Comparação das Cartas ****\n");
     printf("População: Carta 1 venceu (%d)\n", pop_comp);
     printf("Área: Carta 1 venceu (%d)\n", area_comp);
